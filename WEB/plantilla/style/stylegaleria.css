@@ -1,0 +1,107 @@
+/* Estilos generales */
+body {
+  font: 14px Arial, Tahoma, Verdana, sans-serif;
+  background-image: url(../images/header.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  margin: 20px 0;
+}
+
+/* Contenedor principal */
+#wrapper {
+  width: 90%;
+  margin: auto;
+  flex: 1;
+}
+
+/* Header */
+#header {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+}
+
+/* Estilos para la galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Cambié a 4 columnas */
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.galeria .imagen {
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 200px; /* Fijé una altura para las imágenes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galeria .imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que las imágenes cubran completamente el contenedor */
+  transition: box-shadow 0.3s ease;
+}
+
+.galeria .imagen img:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+#footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+}
+
+/* Botones de Redes Sociales */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botones button {
+  background-color: #fff;
+  border: 2px solid #2d053d;
+  border-radius: 0%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.botones button i {
+  color: #c300ff69;
+  font-size: 2rem;
+}
+
+.botones button:hover i {
+  color: #000000;
+}
+

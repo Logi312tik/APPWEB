@@ -1,0 +1,156 @@
+#menu {
+  background: #000000; /* Fondo negro */
+  background: linear-gradient(
+    to bottom,
+    #333333,
+    #000000
+  ); /* Degradado negro */
+  height: 50px;
+  padding-left: 20px;
+  border-radius: 0; /* Sin bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#menu ul,
+#menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu ul {
+  width: 100%;
+  text-align: center;
+}
+
+#menu li {
+  display: inline-block;
+  position: relative;
+}
+
+#menu a {
+  display: block;
+  line-height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #ffffff; /* Texto blanco */
+  font-size: 18px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#menu a.dropdown-arrow:after {
+  content: "\2B9F";
+  margin-left: 5px;
+}
+
+#menu li a:hover {
+  color: #6c5ce7; /* Color morado al pasar el ratón */
+  background: #444444; /* Fondo gris oscuro en hover */
+}
+
+#menu input {
+  display: none;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#menu label {
+  display: none;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  left: 35px;
+}
+
+#menu label:before {
+  font-size: 1.6em;
+  color: #ffffff;
+  content: "\2261";
+  margin-left: 20px;
+}
+
+#menu ul.sub-menus {
+  height: auto;
+  overflow: hidden;
+  width: 200px;
+  background: #2d3436; /* Fondo oscuro para submenús */
+  position: absolute;
+  z-index: 99;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#menu ul.sub-menus li {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+#menu ul.sub-menus a {
+  color: #ffffff; /* Texto blanco en submenús */
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+#menu li:hover ul.sub-menus {
+  display: block;
+}
+
+#menu ul.sub-menus a:hover {
+  background: #6c5ce7; /* Fondo morado en hover */
+  color: #ffffff;
+}
+
+@media screen and (max-width: 800px) {
+  #menu {
+    position: relative;
+  }
+  #menu ul {
+    background: #2d3436; /* Fondo oscuro para el menú en pantallas pequeñas */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    height: auto;
+    display: none;
+    text-align: left;
+  }
+  #menu ul.sub-menus {
+    width: 100%;
+    position: static;
+  }
+  #menu ul.sub-menus a {
+    padding-left: 30px;
+  }
+  #menu li {
+    display: block;
+    float: none;
+    width: auto;
+  }
+  #menu input,
+  #menu label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  #menu input {
+    z-index: 4;
+  }
+  #menu input:checked + label {
+    color: #ffffff;
+  }
+  #menu input:checked + label:before {
+    content: "\00d7"; /* Cambio del icono de menú cuando está abierto */
+  }
+  #menu input:checked ~ ul {
+    display: block;
+  }
+}
